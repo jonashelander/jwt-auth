@@ -4,26 +4,38 @@ Routes define API endpoints.
 
 Example:
 
+```ts
 router.post("/placeholder", placeholder);
+```
 
 Meaning:
 
+```
 HTTP method: POST
 Path: /placeholder
 Handler: placeholder
+```
+
+---
 
 ## Router mounting
 
-In app.ts:
+In `app.ts`:
 
+```ts
 app.use("/api/auth", authRoutes);
+```
 
 This adds a prefix to all routes in the router.
 
-Example:
+Example route in the router:
 
-router.post("/login")
+```ts
+router.post("/login");
+```
 
-becomes:
+Becomes the final endpoint:
 
+```
 POST /api/auth/login
+```

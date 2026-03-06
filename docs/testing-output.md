@@ -1,18 +1,24 @@
 # Jest Test Structure
 
-describe
+## describe
+
 Groups tests.
 
-it
+## it
+
 Defines a single test.
 
 Example:
 
+```ts
 describe("Auth routes", () => {
   it("POST /api/auth/login returns 200", async () => {});
 });
+```
 
 Output example:
 
+```
 Auth routes
   ✓ POST /api/auth/login returns 200
+```
