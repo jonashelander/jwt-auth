@@ -11,6 +11,6 @@ describe("Auth routes", () => {
   it("GET /helloWorld returns 200", async () => {
     const res = await request(app).get("/api/auth/helloWorld");
     expect(res.status).toBe(200);
-    expect(res.body).toEqual({ message: "Hello World!" });
+    expect(res.body).toEqual({ message: "Hello World!!!!!!" });
   });
 });
