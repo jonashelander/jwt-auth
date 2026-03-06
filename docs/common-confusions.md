@@ -2,47 +2,71 @@
 
 ## Express handlers return void
 
-Express ignores return values.
-Always send responses with res.
+Express ignores return values.  
+Always send responses with `res`.
 
 Wrong:
 
-return "Hello World"
+```ts
+return "Hello World";
+```
 
 Correct:
 
-res.json({ message: "Hello World" })
+```ts
+res.json({ message: "Hello World" });
+```
+
+---
 
 ## res.body vs res.text
 
+```ts
 res.json(...)
-→ use res.body
+```
 
-res.send("text")
-→ use res.text
+→ use `res.body`
+
+```ts
+res.send("text");
+```
+
+→ use `res.text`
+
+---
 
 ## Function references
 
-Routes expect a function reference.
+Routes expect a **function reference**.
 
 Correct:
 
-router.post("/login", loginController)
+```ts
+router.post("/login", loginController);
+```
 
 Incorrect:
 
-router.post("/login", loginController())
+```ts
+router.post("/login", loginController());
+```
+
+---
 
 ## JSON response structure
 
 Example:
 
-res.json({ message: "Hello World" })
+```ts
+res.json({ message: "Hello World" });
+```
 
 Client receives:
 
+```json
 {
   "message": "Hello World"
 }
+```
 
-message is just a property name.
+`message` is just a property name.
