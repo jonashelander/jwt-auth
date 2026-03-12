@@ -1,1 +1,1 @@
-// Placeholder — auth middleware not yet implemented
+import jwt from "jsonwebtoken";
