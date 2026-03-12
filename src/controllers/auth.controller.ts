@@ -1,10 +1,18 @@
 import { Request, Response } from "express";
+import { login as loginService } from "../services/auth.service";
 
-// Placeholder — authentication logic not yet implemented
-export const placeholder = (_req: Request, res: Response): void => {
-  res.status(200).json({ message: "placeholder" });
-};
+export const login = (_req: Request, res: Response): void => {
+  const { email, password } = _req.body;
 
-export const helloWorld = (_req: Request, res: Response): void => {
-  res.status(200).json({ message: "Hello World!" });
+  if (!email || !password) {
+    res.status(400).json({ message: "Missing credentials" });
+    return;
+  }
+
+  try {
+    const token = loginService(email, password);
+    res.status(200).json({ accessToken: token });
+  } catch {
+    res.status(401).json({ message: "Invalid credentials" });
+  }
 };
